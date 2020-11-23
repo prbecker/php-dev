@@ -1,0 +1,27 @@
+a) 
+SELECT nome_estado 
+FROM estado 
+WHERE nome_estado = "Paraná"
+
+b)
+todas as tuplas
+SELECT nome_estado, nome_pais
+FROM estado, pais
+
+tuplas com estados de seus respectivos países
+SELECT nome_estado, nome_pais
+FROM estado, pais
+where estado.id_pais = pais.id
+
+c)
+ALTER TABLE pais ADD sigla VARCHAR(2);
+
+d)
+CREATE TABLE cidade 
+(
+    id INT NOT NULL,
+    nome_cidade VARCHAR(255) NOT NULL,
+    id_estado INT,
+    PRIMARY KEY (id),
+    FOREIGN KEY (id_estado) REFERENCES estado(id)
+);
